@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Impressão de notas</title>
+    <link href="estilo.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> 
+<body>
+    <header>
+        <section class="Identificacao" id="identificacao">
+            <input type="text" class="NomeDoCliente" id="NomeDoCliente" name="NomeDoCliente" placeholder="Nome do Cliente">
+            <input type="text" class="LocalizacaoDoCliente" id="LocalizacaoDoCliente" name="LocalizacaoDoCliente" placeholder="Localização do Cliente">
+            <input type="date" class="Data" id="Data" name="Data">
+        </section>
+        <section class="escolhaProdutos" id="escolhaProdutos">
+            <div class="Box_DisplayTable"> <!--Legenda para saber o que colocar na entrada-->
+                <p class="Box_Quantidade">Quantidade</p>
+                <p class="Box_Descricao">Descrição</p>
+                <p class="Box_ValorUnitario">Valor Unitário</p>
+                <p class="Box_ValorTotal">Valor Total</p>
+                <p class="Box_Adicionar" onclick="Adicionar()">  + </p>
+                <datalist id="DescricaoProdutos">
+                    <option value="Farelo de Milho Maratá 40kg">
+                    <option value="Farelo de Milho Maratá 30kg">
+                    <option value="Farelo de Milho Coringa 40kg">
+                    <option value="Farelo de Milho Cristiano 40kg">
+                    <option value="Xerém de Milho 40kg">
+                    <option value="Xerém de Milho Lavado 40kg">
+                    <option value="Xerém de Milho Mungunza 40kg">
+                    <option value="Caroço de Algodão 30kg">
+                    <option value="Farelo de Algodão 50kg">
+                    <option value="Pó de Arroz 30kg">
+                    <option value="Casquinha de Soja 40kg">
+                    <option value="Farelo de Soja 50kg">
+                    <option value="Farelo de Cevada 25kg">
+                    <option value="Milho em Grão 60kg">
+                    <option value="Milho em Grão 30kg">
+                    <option value="Farelo de Soja 25kg">
+                    <option value="Farelo de Trigo 30kg">
+                    <option value="Sal Fino 25kg">
+                    <option value="Sal Grosso 25kg">
+                    <option value="Fardo de Arroz Tio Chico 30kg">
+                    <option value="Fardo de Arroz Kiarroz 30kg">
+                    <option value="Fardo de Açucar 30kg">
+                    <option value="Fardo de Flocão 10kg">
+                    <option value="Fardo de Macarrão 10kg">
+                    <option value="Fardo de café 5kg">
+                    <option value="Caixa de Óleo 20 unidades">
+                    <option value="Fuba Solta 15kg">
+                    <option value="Fuba Solta 30kg">
+                    <option value="Farinha de Mandioca 50kg">
+                </datalist>
+            </div>
+            <div class="Box_DisplayTable" id="TemplateListaProdutos"> <!--Legenda para abrir a caixa de adição-->
+
+            </div>
+            <div class="Box_DisplayTable"> <!--Legenda de adicionar nota e valor total dos produtos-->
+                <p class="Box_Button" onclick="Save()">
+                    Adicionar Nota
+                </p>
+                <p class="Box_Label">
+                    Total:   
+                </p>
+                <p class="Box_Results" id="Box_Results"></p>
+            </div>
+        </section>
+    </header>
+    <main>
+        <aside id="Contador">00</aside>
+        <div class="DisplayNotas">
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+            <div class="print"><div class="Notas"></div><div class="Notas"></div><div class="Notas"></div></div>
+        </div>
+    </main>
+    <script src="./script.js" > </script>
+</body>
+</html>
