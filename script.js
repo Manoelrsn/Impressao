@@ -134,10 +134,10 @@ function Save(){
                     Texto+=`<p class="NotasOne">${inteiro+"."+resto+",00"} </p>`;
                 }
                 else if(parseInt(resto) < 100 && parseInt(resto) >=10){
-                    Texto+=`<p class="NotasOne">${inteiro+"."+resto+"0,00"} </p>`;
+                    Texto+=`<p class="NotasOne">${inteiro+".0"+resto+",00"} </p>`;
                 }
                 else{
-                    Texto+=`<p class="NotasOne">${inteiro+"."+resto+"00,00"} </p>`;
+                    Texto+=`<p class="NotasOne">${inteiro+".00"+resto+",00"} </p>`;
                 }
             }
             else{
@@ -157,10 +157,10 @@ function Save(){
             imprimir = inteiro+"."+resto+",00";
         }
         else if(parseInt(resto) < 100 && parseInt(resto) >=10){
-            imprimir = inteiro+"."+resto+"0,00";
+            imprimir = inteiro+".0"+resto+",00";
         }
         else{
-            imprimir = inteiro+"."+resto+"00,00";
+            imprimir = inteiro+".00"+resto+",00";
         }
     }
     else{
